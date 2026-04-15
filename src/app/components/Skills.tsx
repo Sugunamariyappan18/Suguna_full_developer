@@ -43,7 +43,7 @@ export function Skills() {
   return (
     <section id="skills" className="relative py-32 px-6 overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-purple-950/10 to-transparent" />
+      <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent via-sky-200/40 to-transparent dark:via-purple-950/10" />
 
       <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
         <motion.div
@@ -62,7 +62,7 @@ export function Skills() {
           {skillsData.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
-              className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300"
+              className="theme-panel theme-panel-hover relative rounded-2xl p-8 transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
@@ -83,10 +83,10 @@ export function Skills() {
                     transition={{ duration: 0.5, delay: categoryIndex * 0.2 + skillIndex * 0.1 }}
                   >
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-gray-400">{skill.level}%</span>
+                      <span className="text-slate-700 dark:text-gray-300">{skill.name}</span>
+                      <span className="text-slate-500 dark:text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-2 overflow-hidden rounded-full bg-slate-200/70 dark:bg-white/5">
                       <motion.div
                         className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
                         initial={{ width: 0 }}
@@ -108,7 +108,7 @@ export function Skills() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold mb-8 text-center text-gray-200">Core Competencies</h3>
+          <h3 className="mb-8 text-center text-2xl font-bold text-slate-900 dark:text-gray-200">Core Competencies</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {[
               { name: 'Problem Solving', percentage: 92 },
@@ -130,7 +130,7 @@ export function Skills() {
                       cx="64"
                       cy="64"
                       r="56"
-                      stroke="rgba(255,255,255,0.1)"
+                      stroke="rgba(148,163,184,0.35)"
                       strokeWidth="8"
                       fill="none"
                     />
@@ -155,10 +155,10 @@ export function Skills() {
                     </defs>
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">{competency.percentage}%</span>
+                    <span className="text-2xl font-bold text-slate-900 dark:text-white">{competency.percentage}%</span>
                   </div>
                 </div>
-                <span className="text-gray-300 text-center">{competency.name}</span>
+                <span className="text-center text-slate-700 dark:text-gray-300">{competency.name}</span>
               </motion.div>
             ))}
           </div>

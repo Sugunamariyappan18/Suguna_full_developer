@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 export function Contact() {
   const ref = useRef(null);
@@ -72,7 +72,7 @@ export function Contact() {
             Get In <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Touch</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
-          <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-slate-500 dark:text-gray-400">
             Have a project in mind? Let's discuss how we can work together
           </p>
         </motion.div>
@@ -86,12 +86,12 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-200">Contact Information</h3>
+              <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-gray-200">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.label}
-                    className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
+                    className="theme-panel theme-panel-hover flex items-center gap-4 rounded-xl p-4 transition-all duration-300"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
@@ -101,8 +101,8 @@ export function Contact() {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">{info.label}</p>
-                      <p className="text-gray-200">{info.value}</p>
+                      <p className="text-sm text-slate-500 dark:text-gray-400">{info.label}</p>
+                      <p className="text-slate-900 dark:text-gray-200">{info.value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -111,13 +111,13 @@ export function Contact() {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-gray-200">Follow Me</h3>
+              <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-gray-200">Follow Me</h3>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
                     href={social.url}
-                    className={`p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg ${social.color} transition-all duration-300`}
+                    className={`theme-panel theme-panel-hover rounded-lg p-4 transition-all duration-300 ${social.color}`}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
@@ -132,13 +132,13 @@ export function Contact() {
 
             {/* Decorative Element */}
             <motion.div
-              className="relative p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl border border-white/10"
+              className="relative rounded-2xl border border-slate-200/70 bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-8 dark:border-white/10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1 }}
             >
               <div className="absolute -top-3 -right-3 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-orange-500/20 rounded-full blur-2xl" />
-              <p className="text-gray-300 italic">
+              <p className="italic text-slate-700 dark:text-gray-300">
                 "Open to exciting opportunities and collaborations. Let's build something amazing together!"
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ export function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm text-gray-300 mb-2">
+                <label htmlFor="name" className="mb-2 block text-sm text-slate-700 dark:text-gray-300">
                   Name
                 </label>
                 <input
@@ -162,13 +162,13 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="theme-input-field w-full rounded-lg px-4 py-3 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                   placeholder="Your Name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm text-gray-300 mb-2">
+                <label htmlFor="email" className="mb-2 block text-sm text-slate-700 dark:text-gray-300">
                   Email
                 </label>
                 <input
@@ -178,13 +178,13 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="theme-input-field w-full rounded-lg px-4 py-3 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm text-gray-300 mb-2">
+                <label htmlFor="subject" className="mb-2 block text-sm text-slate-700 dark:text-gray-300">
                   Subject
                 </label>
                 <input
@@ -194,13 +194,13 @@ export function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+                  className="theme-input-field w-full rounded-lg px-4 py-3 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                   placeholder="Project Discussion"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm text-gray-300 mb-2">
+                <label htmlFor="message" className="mb-2 block text-sm text-slate-700 dark:text-gray-300">
                   Message
                 </label>
                 <textarea
@@ -210,7 +210,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 resize-none"
+                  className="theme-input-field w-full resize-none rounded-lg px-4 py-3 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
                   placeholder="Tell me about your project..."
                 />
               </div>

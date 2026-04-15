@@ -73,7 +73,7 @@ export function Experience() {
                 {/* Content Card */}
                 <div className={`flex-1 ml-20 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                   <motion.div
-                    className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+                    className="theme-panel theme-panel-hover relative group rounded-2xl p-8 transition-all duration-300"
                     whileHover={{ scale: 1.02, y: -5 }}
                   >
                     {/* Gradient Accent */}
@@ -92,8 +92,8 @@ export function Experience() {
                         <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}>
                           {exp.position}
                         </h3>
-                        <p className="text-xl text-gray-300 mb-2">{exp.company}</p>
-                        <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                        <p className="mb-2 text-xl text-slate-700 dark:text-gray-300">{exp.company}</p>
+                        <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-gray-400">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-4 h-4" />
                             {exp.duration}
@@ -111,12 +111,12 @@ export function Experience() {
                         {exp.responsibilities.map((responsibility, idx) => (
                           <motion.li
                             key={idx}
-                            className="text-gray-300 flex items-start gap-2"
+                            className="flex items-start gap-2 text-slate-700 dark:text-gray-300"
                             initial={{ opacity: 0, x: -20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.5, delay: index * 0.3 + idx * 0.1 }}
                           >
-                            <span className="text-purple-400 mt-1">•</span>
+                            <span className="mt-1 text-purple-400">-</span>
                             <span>{responsibility}</span>
                           </motion.li>
                         ))}
@@ -132,3 +132,4 @@ export function Experience() {
     </section>
   );
 }
+

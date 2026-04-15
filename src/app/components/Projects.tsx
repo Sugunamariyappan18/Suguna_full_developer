@@ -76,7 +76,7 @@ export function Projects() {
             Featured <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
-          <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-slate-500 dark:text-gray-400">
             Selected projects from professional and personal work
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ export function Projects() {
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500">
+              <div className="theme-panel theme-panel-hover relative overflow-hidden rounded-2xl transition-all duration-500">
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
                   <motion.img
@@ -104,7 +104,7 @@ export function Projects() {
                     }}
                     transition={{ duration: 0.6 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
 
                   {/* Hover Overlay */}
                   <motion.a
@@ -115,7 +115,7 @@ export function Projects() {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.span
-                      className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-3 text-white backdrop-blur-sm"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -142,16 +142,16 @@ export function Projects() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-gray-400 mb-1">{project.type}</p>
-                  <p className="text-sm text-gray-400 mb-3">Role: {project.role}</p>
-                  <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
+                  <p className="mb-1 text-sm text-slate-500 dark:text-gray-400">{project.type}</p>
+                  <p className="mb-3 text-sm text-slate-500 dark:text-gray-400">Role: {project.role}</p>
+                  <p className="mb-4 line-clamp-3 text-slate-700 dark:text-gray-300">{project.description}</p>
 
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300"
+                        className="theme-chip rounded-full px-3 py-1 text-sm"
                       >
                         {tech}
                       </span>

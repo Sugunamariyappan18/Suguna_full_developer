@@ -1,6 +1,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  color-scheme: light;
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
@@ -42,6 +43,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -60,6 +62,8 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
+  --input-background: rgba(15, 23, 42, 0.8);
+  --switch-background: rgba(148, 163, 184, 0.35);
   --ring: oklch(0.439 0 0);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
@@ -187,5 +191,31 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+}
+
+@layer components {
+  .theme-panel {
+    @apply bg-white/75 backdrop-blur-sm border border-slate-200/70 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.45)] dark:bg-white/5 dark:border-white/10 dark:shadow-none;
+  }
+
+  .theme-panel-hover {
+    @apply hover:bg-white/95 dark:hover:bg-white/10;
+  }
+
+  .theme-subtle-card {
+    @apply bg-white/70 border border-slate-200/70 dark:bg-slate-900/50 dark:border-white/10;
+  }
+
+  .theme-chip {
+    @apply bg-white/70 border border-slate-200/80 text-slate-700 dark:bg-white/5 dark:border-white/10 dark:text-gray-300;
+  }
+
+  .theme-outline-button {
+    @apply bg-white/80 border border-slate-200/80 text-slate-900 shadow-sm hover:bg-white dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:shadow-none;
+  }
+
+  .theme-input-field {
+    @apply bg-white/85 border border-slate-200/80 text-slate-900 placeholder:text-slate-400 dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-500;
   }
 }

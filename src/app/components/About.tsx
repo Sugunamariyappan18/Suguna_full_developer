@@ -35,11 +35,11 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
+            <div className="theme-panel relative rounded-2xl p-8">
               <div className="absolute -top-3 -left-3 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-orange-500/20 rounded-full blur-2xl" />
 
-              <div className="relative space-y-4 text-gray-300">
+              <div className="relative space-y-4 text-slate-700 dark:text-gray-300">
                 <p className="text-lg leading-relaxed">
                   I'm a passionate Full Stack Developer with <span className="text-purple-400 font-semibold">1.5 years of experience</span> in building modern web applications. Currently working at <span className="text-blue-400 font-semibold">IGO Agritech Farms</span>, where I develop scalable solutions using cutting-edge technologies.
                 </p>
@@ -62,7 +62,7 @@ export function About() {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="relative group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
+                className="theme-panel theme-panel-hover relative group rounded-xl p-6 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
@@ -76,7 +76,7 @@ export function About() {
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                       {stat.value}
                     </div>
-                    <div className="text-gray-400">{stat.label}</div>
+                    <div className="text-slate-500 dark:text-gray-400">{stat.label}</div>
                   </div>
                 </div>
               </motion.div>
@@ -91,12 +91,12 @@ export function About() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-200">Tools & Technologies</h3>
+          <h3 className="mb-6 text-center text-2xl font-bold text-slate-900 dark:text-gray-200">Tools & Technologies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {['VS Code', 'Git', 'GitHub', 'Postman', 'Chrome DevTools', 'NPM'].map((tool, index) => (
               <motion.div
                 key={tool}
-                className="px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-gray-300 hover:bg-white/10 hover:scale-105 transition-all duration-300"
+                className="theme-chip rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 hover:bg-white dark:hover:bg-white/10"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}

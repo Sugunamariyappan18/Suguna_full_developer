@@ -36,7 +36,7 @@ export function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-slate-950/80 backdrop-blur-lg border-b border-white/5'
+            ? 'border-b border-slate-200/60 bg-white/75 shadow-sm backdrop-blur-lg dark:border-white/5 dark:bg-slate-950/80 dark:shadow-none'
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
@@ -58,7 +58,7 @@ export function Navbar() {
                 <motion.button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  className="group relative text-slate-600 transition-colors hover:text-slate-950 dark:text-gray-300 dark:hover:text-white"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -72,7 +72,7 @@ export function Navbar() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="text-slate-900 dark:text-white md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +85,7 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed top-[72px] left-0 right-0 z-30 md:hidden bg-slate-950/95 backdrop-blur-lg border-b border-white/5"
+            className="fixed top-[72px] left-0 right-0 z-30 border-b border-slate-200/70 bg-white/90 backdrop-blur-lg dark:border-white/5 dark:bg-slate-950/95 md:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -96,7 +96,7 @@ export function Navbar() {
                 <motion.button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="block w-full text-left text-gray-300 hover:text-white transition-colors py-2"
+                  className="block w-full py-2 text-left text-slate-600 transition-colors hover:text-slate-950 dark:text-gray-300 dark:hover:text-white"
                   whileHover={{ x: 10 }}
                 >
                   {item.name}

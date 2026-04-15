@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative py-12 px-6 border-t border-white/5">
+    <footer className="relative border-t border-slate-200/70 px-6 py-12 dark:border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center justify-center space-y-6">
           {/* Logo/Name */}
@@ -17,7 +17,7 @@ export function Footer() {
           </motion.div>
 
           {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-6 text-gray-400">
+          <div className="flex flex-wrap justify-center gap-6 text-slate-500 dark:text-gray-400">
             {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
               <motion.button
                 key={item}
@@ -25,7 +25,7 @@ export function Footer() {
                   const element = document.querySelector(`#${item.toLowerCase()}`);
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="hover:text-white transition-colors duration-300"
+                className="transition-colors duration-300 hover:text-slate-950 dark:hover:text-white"
                 whileHover={{ y: -2 }}
               >
                 {item}
@@ -34,11 +34,11 @@ export function Footer() {
           </div>
 
           {/* Divider */}
-          <div className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-slate-300/80 to-transparent dark:via-white/10" />
 
           {/* Copyright */}
           <div className="text-center space-y-2">
-            <p className="text-gray-400 flex items-center justify-center gap-2">
+            <p className="flex items-center justify-center gap-2 text-slate-500 dark:text-gray-400">
               Designed & Developed with{' '}
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
@@ -48,7 +48,7 @@ export function Footer() {
               </motion.span>{' '}
               by Suguna
             </p>
-            <p className="text-gray-500 text-sm">Â© {currentYear} All rights reserved.</p>
+            <p className="text-sm text-slate-400 dark:text-gray-500">© {currentYear} All rights reserved.</p>
           </div>
 
           {/* Decorative Element */}
@@ -64,3 +64,4 @@ export function Footer() {
     </footer>
   );
 }
+

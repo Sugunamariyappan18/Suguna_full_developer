@@ -49,7 +49,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <span className="text-lg md:text-xl text-gray-400">Hello, I'm</span>
+          <span className="text-lg md:text-xl text-slate-500 dark:text-gray-400">Hello, I'm</span>
         </motion.div>
 
         <motion.h1
@@ -69,7 +69,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <span className="text-gray-300">I'm a </span>
+          <span className="text-slate-700 dark:text-gray-300">I'm a </span>
           <span
             ref={typedRef}
             className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
@@ -77,7 +77,7 @@ export function Hero() {
         </motion.div>
 
         <motion.p
-          className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto"
+          className="mb-12 max-w-2xl mx-auto text-lg text-slate-500 dark:text-gray-400 md:text-xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -106,7 +106,7 @@ export function Hero() {
 
           <motion.button
             onClick={() => handleNavClick('#contact')}
-            className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 transition-all duration-300 text-white flex items-center gap-2"
+            className="theme-outline-button flex items-center gap-2 rounded-lg px-8 py-4 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -123,11 +123,11 @@ export function Hero() {
           transition={{ delay: 1.5 }}
         >
           <motion.div
-            className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-2"
+            className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-slate-300/70 p-2 dark:border-white/20"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <div className="w-1 h-2 bg-white/50 rounded-full" />
+            <div className="h-2 w-1 rounded-full bg-slate-500/60 dark:bg-white/50" />
           </motion.div>
         </motion.div>
       </div>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.remote_check/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
